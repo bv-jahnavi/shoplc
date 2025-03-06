@@ -112,9 +112,9 @@
 }
 
 .carousel .carousel-navigation-buttons button::after {
+  border: 2px solid;
   border-bottom: 0;
   border-left: 0;
-  border: 2px solid;
   content: '';
   display: block;
   height: 12px;
