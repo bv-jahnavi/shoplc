@@ -102,7 +102,7 @@
   margin: 0;
   border-radius: 50%;
   padding: 0;
-  background-color: rgba(19 19 19 / 25%);
+  background-color: rgba(0 0 0 / 60%);
   transition: background-color 0.2s;
 }
 
@@ -112,22 +112,30 @@
 }
 
 .carousel .carousel-navigation-buttons button::after {
-  display: block;
-  content: '';
-  border: 2px solid;
   border-bottom: 0;
   border-left: 0;
+  border: 2px solid;
+  content: '';
+  display: block;
   height: 12px;
-  width: 12px;
+  left: calc(50% + 2px);
   position: absolute;
   top: 50%;
-  left: calc(50% + 2px);
   transform: translate(-50%, -50%) rotate(-135deg);
+  width: 12px;
 }
 
 .carousel .carousel-navigation-buttons button.slide-next::after {
   transform: translate(-50%, -50%) rotate(45deg);
   left: calc(50% - 2px);
+}
+
+.carousel-slide-image {
+  width: 100%;
+}
+
+.hero-banner-slider {
+  padding-top: 16px;
 }
 
 .hero-banner-slider .carousel {
@@ -140,8 +148,10 @@
 
 .hero-banner-slider .carousel .carousel-navigation-buttons button {
   background-color: rgb(255 255 255 / 40%);
+  border: 0;
   border-radius: 0;
   color: rgb(0 0 0 / 50%);
+  cursor: pointer;
   font-size: 27px;
   font-weight: 700;
   height: 53px;
@@ -150,23 +160,41 @@
 }
 
 .hero-banner-slider .carousel .carousel-navigation-buttons button:hover {
-  background-color: rgb(0 0 0 / 70%);
+  background-color: rgb(255 255 255 / 70%);
 }
 
 .hero-banner-slider .carousel .carousel-slide-indicators {
   bottom: 0;
   left: 0;
   list-style: none;
+  margin-bottom: 16px;
   margin-left: 15%;
   margin-right: 15%;
   padding-left: 0;
+  padding: 0;
   position: absolute;
   right: 0;
   z-index: 15;
 }
 
-.hero-banner-slider .carousel .carousel-slide-indicator button.active {
+.hero-banner-slider .carousel .carousel-slide-indicator button {
+  background-clip: padding-box;
+  background-color: #fff;
+  border-radius: 0;
+  border: 0;
+  box-sizing: content-box;
+  cursor: pointer;
+  flex: 0 1 auto;
+  height: 3px;
+  margin: 10px 3px;
   opacity: 1;
+  text-indent: -999px;
+  transition: opacity .6sease;
+  width: 30px;
+}
+
+.hero-banner-slider .carousel .carousel-slide-indicator button[disabled='true'] {
+  opacity: .5;
 }
 
 @media (width >= 600px) {
@@ -175,6 +203,7 @@
     right: 24px;
   }
 
+  .bottom-main-carousel .carousel .carousel-navigation-buttons,
   .hero-banner-slider .carousel .carousel-navigation-buttons {
     left: 0;
     right: 0;

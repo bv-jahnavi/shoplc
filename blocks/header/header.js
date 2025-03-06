@@ -237,6 +237,52 @@ export default async function decorate(block) {
 
   const navTools = nav.querySelector('.nav-tools');
 
+  /** Search */
+
+  // TODO
+  const search = document.createRange().createContextualFragment(`
+    <div class="search-wrapper nav-tools-wrapper">
+      <button type="button" class="nav-search-button">Search</button>
+      <div class="nav-search-input nav-search-panel nav-tools-panel">
+        <form action="/search" method="GET">
+          <input id="search" type="search" name="q" placeholder="Search" />
+          <div id="search_autocomplete" class="search-autocomplete"></div>
+        </form>
+      </div>
+    </div>
+    `);
+
+  navTools.append(search);
+
+  const searchPanel = navTools.querySelector('.nav-search-panel');
+
+  const searchButton = navTools.querySelector('.nav-search-button');
+
+  const searchInput = searchPanel.querySelector('input');
+
+  const searchForm = searchPanel.querySelector('form');
+
+  searchForm.action = rootLink('/search');
+
+  async function toggleSearch(state) {
+    const show = state ?? !searchPanel.classList.contains('nav-tools-panel--show');
+
+    searchPanel.classList.toggle('nav-tools-panel--show', show);
+
+    if (show) {
+      await import('./searchbar.js');
+      searchInput.focus();
+    }
+  }
+
+  navTools.querySelector('.nav-search-button').addEventListener('click', () => {
+    if (isDesktop.matches) {
+      toggleAllNavSections(navSections);
+      overlay.classList.remove('show');
+    }
+    toggleSearch();
+  });
+
   /** Mini Cart */
   const excludeMiniCartFromPaths = ['/checkout'];
 
@@ -288,52 +334,6 @@ export default async function decorate(block) {
     },
     { eager: true },
   );
-
-  /** Search */
-
-  // TODO
-  const search = document.createRange().createContextualFragment(`
-  <div class="search-wrapper nav-tools-wrapper">
-    <button type="button" class="nav-search-button">Search</button>
-    <div class="nav-search-input nav-search-panel nav-tools-panel">
-      <form action="/search" method="GET">
-        <input id="search" type="search" name="q" placeholder="Search" />
-        <div id="search_autocomplete" class="search-autocomplete"></div>
-      </form>
-    </div>
-  </div>
-  `);
-
-  navTools.append(search);
-
-  const searchPanel = navTools.querySelector('.nav-search-panel');
-
-  const searchButton = navTools.querySelector('.nav-search-button');
-
-  const searchInput = searchPanel.querySelector('input');
-
-  const searchForm = searchPanel.querySelector('form');
-
-  searchForm.action = rootLink('/search');
-
-  async function toggleSearch(state) {
-    const show = state ?? !searchPanel.classList.contains('nav-tools-panel--show');
-
-    searchPanel.classList.toggle('nav-tools-panel--show', show);
-
-    if (show) {
-      await import('./searchbar.js');
-      searchInput.focus();
-    }
-  }
-
-  navTools.querySelector('.nav-search-button').addEventListener('click', () => {
-    if (isDesktop.matches) {
-      toggleAllNavSections(navSections);
-      overlay.classList.remove('show');
-    }
-    toggleSearch();
-  });
 
   // Close panels when clicking outside
   document.addEventListener('click', (e) => {
