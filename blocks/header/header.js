@@ -388,14 +388,6 @@ export default async function decorate(block) {
   renderAuthDropdown(navTools);
 }
 
-/** Wishlist */
-const wishlist = document.createRange().createContextualFragment(`
-  <div class="wishlist-wrapper nav-tools-wrapper">
-    <a href="/wishlist" class="nav-wishlist-button" aria-label="Wishlist">Wishlist</a>
-  </div>
-`);
-
-navTools.append(wishlist);
 
 events.on('cart/initialized', () => {
   applyHashTagsForDomElement('nav');
