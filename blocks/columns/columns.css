@@ -15,18 +15,16 @@
   order: 0;
 }
 
-.columns > div > .columns-img-col img {
-  display: block;
-}
-
 .promocode-section .columns-img-col {
-  -webkit-transition: all .2s;
   transform: none;
   transition: all .2s;
 }
 
+.columns > div > .columns-img-col img {
+  display: block;
+}
+
 .promocode-section .columns-img-col:hover {
-  -webkit-transform: translateY(-2%);
   transform: translateY(-2%);
 }
 
