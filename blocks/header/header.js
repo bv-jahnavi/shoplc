@@ -388,7 +388,6 @@ export default async function decorate(block) {
   renderAuthDropdown(navTools);
 }
 
-
 events.on('cart/initialized', () => {
   applyHashTagsForDomElement('nav');
 }, { eager: true });
