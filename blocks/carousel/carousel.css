@@ -112,9 +112,9 @@
 }
 
 .carousel .carousel-navigation-buttons button::after {
+  border: 2px solid;
   border-bottom: 0;
   border-left: 0;
-  border: 2px solid;
   content: '';
   display: block;
   height: 12px;
@@ -135,7 +135,20 @@
 }
 
 .hero-banner-slider {
+  clear: both;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1550px;
   padding-top: 16px;
+}
+
+main > .section.hero-banner-slider {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
 }
 
 .hero-banner-slider .carousel {
@@ -182,14 +195,14 @@
   flex: 0 1 auto;
   height: 3px;
   margin: 10px 3px;
-  opacity: 1;
+  opacity: .5;
   text-indent: -999px;
   transition: opacity .6s ease;
   width: 30px;
 }
 
 .hero-banner-slider .carousel .carousel-slide-indicator button[disabled='true'] {
-  opacity: .5;
+  opacity: 1;
 }
 
 .hero-banner-slider .carousel .carousel-navigation-buttons button:hover {
@@ -216,5 +229,14 @@
 
   .carousel .carousel-slide .carousel-slide-content[data-align='justify'] {
     --slide-content-width: auto;
+  }
+}
+
+@media (width >= 900px) {
+  .hero-banner-slider .carousel-wrapper {
+    width: 65.75%;
+    max-width: 1060px;
+    padding: 0;
+    margin: 0;
   }
 }
