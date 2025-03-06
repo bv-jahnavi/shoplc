@@ -45,8 +45,8 @@ header nav[aria-expanded='true'] {
     display: flex;
     justify-content: space-between;
     gap: 0 32px;
-    max-width: 1264px;
-    padding: 0 32px;
+    max-width: 1350px;
+    padding: 0 22px;
   }
 
   header nav[aria-expanded='true'] {
@@ -333,6 +333,8 @@ header nav .nav-tools {
   align-items: center;
   background: var(--background-color);
   z-index: 3;
+  width: 30%;
+  justify-content: space-between;
 }
 
 header nav .nav-tools-wrapper > button {
@@ -346,10 +348,23 @@ header nav .nav-tools-wrapper > button {
 }
 
 header nav .nav-tools button.nav-cart-button {
-  background-image: url('../../icons/cart.svg');
-  background-repeat: no-repeat;
-  background-position: center;
   position: relative;
+  width: auto;
+  height: auto;
+}
+
+header nav .nav-tools button.nav-wishlist-button > svg {
+  line-height: 1;
+  vertical-align: middle;
+}
+
+header nav .nav-tools button.nav-cart-button::before {
+  content: url('../../icons/cart.svg');
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  vertical-align: middle;
 }
 
 header nav .nav-tools button.nav-cart-button[data-count]::after {

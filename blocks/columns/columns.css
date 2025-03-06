@@ -15,7 +15,7 @@
   order: 0;
 }
 
-.promocode-section .columns-img-col {
+.promocode-section .columns > div > .columns-img-col {
   transform: none;
   transition: all .2s;
 }
@@ -24,11 +24,11 @@
   display: block;
 }
 
-.promocode-section .columns-img-col:hover {
+.promocode-section .columns > div > .columns-img-col:hover {
   transform: translateY(-2%);
 }
 
-.promocode-section .columns-img-col > h2 {
+.promocode-section .columns > div > .columns-img-col > h2 {
   margin: 0;
 }
 

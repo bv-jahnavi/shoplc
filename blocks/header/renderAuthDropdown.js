@@ -28,7 +28,7 @@ function renderSignIn(element) {
 export function renderAuthDropdown(navTools) {
   const dropdownElement = document.createRange().createContextualFragment(`
  <div class="dropdown-wrapper nav-tools-wrapper">
-    <button type="button" class="nav-dropdown-button" aria-haspopup="dialog" aria-expanded="false" aria-controls="login-modal">Login / Join Us</button>
+    <button type="button" class="nav-dropdown-button" aria-haspopup="dialog" aria-expanded="false" aria-controls="login-modal"></button>
     <div class="nav-auth-menu-panel nav-tools-panel">
       <div id="auth-dropin-container"></div>
       <ul class="authenticated-user-menu">
@@ -95,7 +95,7 @@ export function renderAuthDropdown(navTools) {
       authDropDownMenuList.style.display = 'none';
       authDropinContainer.style.display = 'block';
       loginButton.innerHTML = `
-      <svg width="25" height="25" aria-label="My Account" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+      <svg width="20" height="20" aria-label="My Account" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 viewBox="0 0 17 22" xml:space="preserve">
         <path id="Path_38" class="st0" d="M13.6,14.2c-1.4,0-2.6-1-2.8-2.4c0.5-0.3,0.8-0.7,1.2-1.1c0.7-0.9,1.1-2,1.2-3.2
           c0.1-0.1,0.1-0.1,0.2-0.2c0.3-0.7,0.4-1.4,0.4-2.1c0.1-2.7-2.1-5-4.8-5.1C8.2,0,7.6,0.2,7,0.5c-0.2,0-0.5,0.1-0.7,0.1
@@ -108,7 +108,7 @@ viewBox="0 0 17 22" xml:space="preserve">
           c2,0.1,3.6,1.8,3.6,3.9c-0.4-0.3-0.9-0.5-1.4-0.5H7.7C7.3,4.5,7,4.3,6.9,4C6.8,3.8,6.5,3.6,6.2,3.6c-0.3,0-0.6,0.2-0.7,0.5
           c-0.2,0.7-0.5,1.3-1,1.8C4.2,4,5.1,2.2,6.6,1.6L6.6,1.6z M7.3,12.3c0.8,0.2,1.6,0.2,2.3,0c0.2,0.9,0.7,1.6,1.4,2.2L8.5,18L6,14.5
           C6.7,13.9,7.1,13.1,7.3,12.3L7.3,12.3z"/>
-        </svg>
+        </svg>&nbsp;Login / Join Us
         `;
     }
   };
