@@ -159,10 +159,6 @@
   width: 36px;
 }
 
-.hero-banner-slider .carousel .carousel-navigation-buttons button:hover {
-  background-color: rgb(255 255 255 / 70%);
-}
-
 .hero-banner-slider .carousel .carousel-slide-indicators {
   bottom: 0;
   left: 0;
@@ -170,7 +166,6 @@
   margin-bottom: 16px;
   margin-left: 15%;
   margin-right: 15%;
-  padding-left: 0;
   padding: 0;
   position: absolute;
   right: 0;
@@ -189,12 +184,16 @@
   margin: 10px 3px;
   opacity: 1;
   text-indent: -999px;
-  transition: opacity .6sease;
+  transition: opacity .6s ease;
   width: 30px;
 }
 
 .hero-banner-slider .carousel .carousel-slide-indicator button[disabled='true'] {
   opacity: .5;
+}
+
+.hero-banner-slider .carousel .carousel-navigation-buttons button:hover {
+  background-color: rgb(255 255 255 / 70%);
 }
 
 @media (width >= 600px) {
