@@ -1,13 +1,52 @@
 footer {
-    background-color: var(--color-neutral-100);
+    background-color: #f9f9f9;
     font: var(--type-body-2-default-font);
-    letter-spacing: var(--type-body-2-default-letter-spacing);
 }
 
 footer .footer > div {
     margin: auto;
-    max-width: 1200px;
-    padding: 40px 24px 24px;
+    max-width: 1280px;
+    padding: 25px 15px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+footer .footer > div .footer-links-colum {
+    max-width: 213px;
+    width: 100%;
+}
+
+footer .footer > div .social-footer-links {
+    width: 100%;
+    max-width: 426px;
+}
+
+footer .footer > div .footer-copyrights {
+    width: 100%;
+    text-align: center;
+    background: #fff;
+    margin-top: 32px;
+    padding-top: 28px;
+    position: relative;
+    padding-bottom: 28px;
+}
+
+footer .footer > div .footer-copyrights::after,
+footer .footer > div .footer-copyrights::before {
+    content: '';
+    background: #fff;
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    left: -100%;
+    top: 0;
+    bottom: 0;
+}
+
+footer .footer > div .footer-copyrights::before {
+    right: -100%;
+    left: auto;
 }
 
 footer .footer p {
@@ -66,8 +105,70 @@ footer .footer p {
     margin-bottom: var(--spacing-small);
 }
 
+.footer-wrapper .section ul li a,
+.footer-wrapper .section h3 {
+    font-family: OpenSans-Regular, arial, sans-serif;
+    font-style: normal;
+    line-height: 26px;
+}
+
+.footer-wrapper .section h3 {
+    color: #000;
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0 0 15px;
+    text-transform: uppercase;
+}
+
+.footer-wrapper .section ul {
+    padding: 0;
+    margin: 0;
+}
+
+.footer-wrapper .section ul li {
+    list-style: none;
+}
+
+.footer-wrapper .section ul li a {
+    font-size: 13px;
+    color: #5a5a5a;
+    font-weight: 600;
+}
+
+.footer-wrapper .section.social-footer-links ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-wrapper .section.social-footer-links ul li {
+    list-style: none;
+    max-width: 122px;
+    margin-right: 15px;
+    display: inline-block;
+}
+
+.footer-wrapper .section.social-footer-links ul li:last-child {
+    margin-right: 0;
+}
+
+.footer-wrapper .section.social-footer-links ul li img {
+    width: 100%;
+    height: auto;
+}
+
+footer .footer > div .social-footer-links .default-content-wrapper > ul + * {
+    margin-top: 40px;
+}
+
+footer .footer > div .social-footer-links .default-content-wrapper > ul .icon {
+    height: 36px;
+    width: 36px;
+}
+
 @media (width >= 900px) {
-    footer .footer > div {
-        padding: 40px 32px 24px;
+    footer .footer > div .footer-links-colum {
+        width: 16%;
     }
 }
