@@ -285,7 +285,6 @@ async function loadEager(doc) {
         await loadSection(sections[1], waitForFirstImage);
       }
     }
-    
     document.body.classList.add('appear');
   }
 
