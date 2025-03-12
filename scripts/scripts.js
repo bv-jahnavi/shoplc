@@ -293,6 +293,18 @@ async function loadEager(doc) {
           });
         }
       }
+      if (sections[2]) {
+        await loadSection(sections[2], waitForFirstImage);
+        const firstImages = sections[2].querySelectorAll('img');
+        if (firstImages.length > 0) {
+          firstImages.forEach((img, index) => {
+            if (index < 3) {
+              img.setAttribute('loading', 'eager');
+              img.setAttribute('fetchpriority', 'high');
+            }
+          });
+        }
+      }
     }
     document.body.classList.add('appear');
   }
