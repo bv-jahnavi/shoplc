@@ -79,7 +79,7 @@
   --shape-icon-stroke-4: 4px;
   --spacing-xxsmall: 4px;
   --spacing-xsmall: 8px;
-  --spacing-small: 16px;
+  --spacing-small: 15px;
   --spacing-medium: 24px;
   --spacing-big: 32px;
   --spacing-xbig: 40px;
@@ -409,17 +409,11 @@ main > .section {
 main > .section > div {
   max-width: 1580px;
   margin: auto;
-  padding: 0 var(--spacing-medium);
+  padding: 0 var(--spacing-small);
 }
 
 main > .section:first-of-type {
   margin-top: 0;
-}
-
-@media (width >= 900px) {
-  main > .section > div {
-    padding: 0 15px;
-  }
 }
 
 /* section metadata */
@@ -501,10 +495,11 @@ main[hidden] {
   background-color: #6a0854;
   color: #fff;
   display: inline-block;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
+  line-height: 1;
   margin: 0;
-  padding: 10px;
+  padding: 5px 0;
   text-align: center;
   width: 100%;
 }
@@ -512,6 +507,8 @@ main[hidden] {
 .promo-bar a,
 .promo-bar a:not(.dropin-design a) {
   color: #fff;
+  font-size: 14px;
+  line-height: 1;
   text-decoration: underline;
 }
 
@@ -529,4 +526,16 @@ main > .section.promo-bar {
 
 .promo-bar .default-content-wrapper p {
   margin: 0;
+}
+
+@media (width >= 768px) {
+  .promo-bar {
+    font-size: 16px;
+    padding: 10px 0;
+  }
+
+  .promo-bar a,
+  .promo-bar a:not(.dropin-design a) {
+    font-size: 16px;
+  }
 }

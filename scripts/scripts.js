@@ -277,7 +277,15 @@ async function loadEager(doc) {
     await applyTemplates(doc);
 
     // Load LCP blocks
-    await loadSection(main.querySelector('.section'), waitForFirstImage);
+    // await loadSection(main.querySelector('.section'), waitForFirstImage);
+    const sections = main.querySelectorAll('.section');
+    if (sections.length > 0) {
+      await loadSection(sections[0], waitForFirstImage);
+      if (sections[1]) {
+        await loadSection(sections[1], waitForFirstImage);
+      }
+    }
+    
     document.body.classList.add('appear');
   }
 
