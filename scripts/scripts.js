@@ -283,6 +283,15 @@ async function loadEager(doc) {
       await loadSection(sections[0], waitForFirstImage);
       if (sections[1]) {
         await loadSection(sections[1], waitForFirstImage);
+        const firstImages = sections[1].querySelectorAll('img');
+        if (firstImages.length > 0) {
+          firstImages.forEach((img, index) => {
+            if (index < 4) {
+              img.setAttribute('loading', 'eager');
+              img.setAttribute('fetchpriority', 'high');
+            }
+          });
+        }
       }
     }
     document.body.classList.add('appear');
