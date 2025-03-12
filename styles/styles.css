@@ -504,6 +504,10 @@ main[hidden] {
   width: 100%;
 }
 
+.promo-bar p {
+  font-size: 14px;
+}
+
 .promo-bar a,
 .promo-bar a:not(.dropin-design a) {
   color: #fff;
@@ -534,6 +538,7 @@ main > .section.promo-bar {
     padding: 10px 0;
   }
 
+  .promo-bar p,
   .promo-bar a,
   .promo-bar a:not(.dropin-design a) {
     font-size: 16px;

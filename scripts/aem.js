@@ -320,6 +320,7 @@ function createOptimizedPicture(
     } else {
       const img = document.createElement('img');
       img.setAttribute('loading', eager ? 'eager' : 'lazy');
+      if (eager) img.setAttribute('fetchpriority', 'high');
       img.setAttribute('alt', alt);
       picture.appendChild(img);
       img.setAttribute('src', `${pathname}?width=${br.width}&format=${ext}&optimize=medium`);
@@ -439,9 +440,15 @@ function decorateIcon(span, prefix = '', alt = '', width = '', height = '') {
   img.src = `${window.hlx.codeBasePath}${prefix}/icons/${iconName}.svg`;
   img.alt = alt;
   img.loading = 'lazy';
+  img.setAttribute('width', width || '26');
+  img.setAttribute('height', height || '26');
+
   img.onload = () => {
-    img.width = width || img.naturalWidth;
-    img.height = height || img.naturalHeight;
+    // Update with natural size only if no width/height provided
+    if (!width || !height) {
+      img.setAttribute('width', img.naturalWidth);
+      img.setAttribute('height', img.naturalHeight);
+    }
   };
   span.append(img);
 }

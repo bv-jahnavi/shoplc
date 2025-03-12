@@ -15,7 +15,14 @@
   order: 0;
 }
 
+.promocode-section .columns > div {
+  flex-direction: unset;
+  flex-wrap: wrap;
+  gap: 40px 10px;
+}
+
 .promocode-section .columns > div > .columns-img-col {
+  flex: calc(50% - 5px);
   transform: none;
   transition: all .2s;
 }
@@ -32,9 +39,22 @@
   margin: 0;
 }
 
+.hero-banner-slider .columns > div {
+  gap: 10px;
+}
+
 .hero-banner-slider .columns > div > div {
   flex: 100%;
   width: 100%;
+}
+
+@media (width >= 768px) {
+  .hero-banner-slider .columns-wrapper {
+    width: 33.5%;
+    max-width: 540px;
+    padding: 0;
+    margin: 0;
+  }
 }
 
 @media (width >= 900px) {
@@ -49,15 +69,17 @@
     order: unset;
   }
 
-  .hero-banner-slider .columns-wrapper {
-    width: 33.5%;
-    max-width: 540px;
-    padding: 0;
-    margin: 0;
-  }
-
   .hero-banner-slider .columns > div {
     flex-direction: column;
     gap: 10px;
+  }
+
+  .promocode-section .columns > div {
+    gap: 24px;
+    flex-wrap: nowrap;
+  }
+  
+  .promocode-section .columns > div > .columns-img-col {
+    flex: 1;
   }
 }

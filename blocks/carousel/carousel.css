@@ -253,9 +253,7 @@ main > .section.hero-banner-slider > div {
   .hero-banner-slider {
     flex-wrap: nowrap;
   }
-}
 
-@media (width >= 900px) {
   .hero-banner-slider .carousel-wrapper {
     width: 65.75%;
     max-width: 1060px;
