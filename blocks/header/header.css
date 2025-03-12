@@ -28,7 +28,7 @@ header nav {
   font-family: var(--type-base-font-family);
 }
 
-header nav[aria-expanded='true'] {
+header .nav-wrapper.active nav[aria-expanded='true'] {
   display: grid;
   grid-template:
     'hamburger brand' var(--nav-height)
@@ -47,7 +47,7 @@ header nav[aria-expanded='true'] {
     padding: 0 22px;
   }
 
-  header nav[aria-expanded='true'] {
+  header .nav-wrapper.active nav[aria-expanded='true'] {
     min-height: 0;
     overflow: visible;
   }
@@ -597,13 +597,13 @@ a.nav-wishlist-button:not(.dropin-design a) {
     position: relative;
   }
 
-  header nav[aria-expanded='true'] {
+  header .nav-wrapper.active nav[aria-expanded='true'] {
     gap: var(--spacing-small);
     overflow-x: hidden;
     width: 320px;
   }
 
-  header nav[aria-expanded='true'] .nav-tools {
+  header .nav-wrapper.active nav[aria-expanded='true'] .nav-tools {
     background: var(--background-color);
     bottom: 0;
     height: auto;
@@ -614,7 +614,7 @@ a.nav-wishlist-button:not(.dropin-design a) {
     width: 320px;
   }
 
-  header nav[aria-expanded='true'] .nav-tools-panel--show {
+  header .nav-wrapper.active nav[aria-expanded='true'] .nav-tools-panel--show {
     position: fixed;
   }
 
@@ -662,7 +662,7 @@ a.nav-wishlist-button:not(.dropin-design a) {
     padding: 0;
   }
 
-  header nav[aria-expanded='true'] .nav-brand a {
+  header .nav-wrapper.active nav[aria-expanded='true'] .nav-brand a {
     left: -16px;
     position: relative;
   }
